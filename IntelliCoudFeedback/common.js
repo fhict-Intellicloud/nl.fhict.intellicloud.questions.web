@@ -1,4 +1,3 @@
-
 var url = "http://81.204.121.229/IntelliCloudService/IntelliCloudService.svc/";
 
 /*
@@ -9,19 +8,7 @@ var url = "http://81.204.121.229/IntelliCloudService/IntelliCloudService.svc/";
 */
 $(document).ready(function() 
 {
-	var id = $.urlParam('AnswerId');
-
-	loadAnswerWithId(id);
-
-	$("#btnDecline").click(function()
-	{
-		decline(id);	
-	});
-
-	$("#btnAccept").click(function()
-	{
-		accept(id);	
-	});
+	loadQuestionWithId($.urlParam('QuestionId'));
 });
 
 /*
@@ -36,14 +23,24 @@ $.urlParam = function(name)
 /*
 * This function loads data from the backend and fils the answerfield & questionfield          
 */
-function loadAnswerWithId(id)
+function loadQuestionWithId(id)
 {
-	var request = $.get(url + "GetAnswerById/" + id, null, null, "json");
+	var request = $.get(url + "GetQuestionById/" + id, null, null, "json");
 	
 	request.done(function (response)
 	{
-		$("#answerfield").html(response.Content);
-		$("#questionfield").html(response.Question);
+		$("#answerfield").html(response.Answer.Content);
+		$("#questionfield").html(response.Content);
+		
+		$("#btnAccept").click(function()
+		{
+			accept(response.Answer.Id, id);	
+		});
+		
+		$("#btnDecline").click(function()
+		{
+			decline(response.Answer.Id, id);	
+		});
 	});
 	request.fail(function (response)
 	{
@@ -54,9 +51,9 @@ function loadAnswerWithId(id)
 /*
 * This function accepts an answer and sends the feedback to the backend         
 */
-function accept(id) 
+function accept(answerId, questionId) 
 {
-	var request = $.post(url + "AcceptAnswer", {feedback : feedback.value , answerId : id, questionId : "-1"}, null, "json");
+	var request = $.post(url + "AcceptAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId}, null, "json");
 	
 	request.done(function (response)
 	{
@@ -72,9 +69,9 @@ function accept(id)
 /*
 * This function declines an answer and sends the feedback to the backend         
 */
-function decline(id)
+function decline(answerId, questionId)
 {
-	var request = $.post(url + "DeclineAnswer", {feedback : feedback.value , answerId : id, questionId : "-1"}, null, "json");
+	var request = $.post(url + "DeclineAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId}, null, "json");
 	
 	request.done(function (response)
 	{
