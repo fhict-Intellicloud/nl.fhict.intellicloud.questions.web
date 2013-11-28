@@ -3,12 +3,11 @@ var url = "http://81.204.121.229/IntelliCloudService/IntelliCloudService.svc/";
 /*
 * This function is called when the page is loaded.
 * 
-* The question & answer is loaded into the right fields
-* The accept & decline methods are bound to the buttons       
+* The loadQestion method is invoked 
 */
 $(document).ready(function() 
 {
-	loadQuestionWithId($.urlParam('QuestionId'));
+	loadQuestionWithId($.urlParam('QuestionId'), $.urlParam('Token'));
 });
 
 /*
@@ -21,11 +20,12 @@ $.urlParam = function(name)
 }
 
 /*
-* This function loads data from the backend and fils the answerfield & questionfield          
+* This function loads data from the backend and fils the answerfield & questionfield 
+* The accept & decline methods are bound to the buttons               
 */
-function loadQuestionWithId(id)
+function loadQuestionWithId(questionid, token)
 {
-	var request = $.get(url + "GetQuestionById/" + id, null, null, "json");
+	var request = $.get(url + "GetQuestionById/" + questionid, null, null, "json");
 	
 	request.done(function (response)
 	{
@@ -34,12 +34,12 @@ function loadQuestionWithId(id)
 		
 		$("#btnAccept").click(function()
 		{
-			accept(response.Answer.Id, id);	
+			accept(response.Answer.Id, questionid, token);	
 		});
 		
 		$("#btnDecline").click(function()
 		{
-			decline(response.Answer.Id, id);	
+			decline(response.Answer.Id, questionid, token);	
 		});
 	});
 	request.fail(function (response)
@@ -51,9 +51,9 @@ function loadQuestionWithId(id)
 /*
 * This function accepts an answer and sends the feedback to the backend         
 */
-function accept(answerId, questionId) 
+function accept(answerId, questionId, token) 
 {
-	var request = $.post(url + "AcceptAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId}, null, "json");
+	var request = $.post(url + "AcceptAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId, "token" : token}, null, "json");
 	
 	request.done(function (response)
 	{
@@ -69,9 +69,9 @@ function accept(answerId, questionId)
 /*
 * This function declines an answer and sends the feedback to the backend         
 */
-function decline(answerId, questionId)
+function decline(answerId, questionId, token)
 {
-	var request = $.post(url + "DeclineAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId}, null, "json");
+	var request = $.post(url + "DeclineAnswer", {"feedback" : feedback.value , "answerId" : answerId, "questionId" : questionId, "token" : token}, null, "json");
 	
 	request.done(function (response)
 	{
