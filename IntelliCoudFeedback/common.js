@@ -11,21 +11,25 @@ $(document).ready(function()
 });
 
 /*
-* This function extracts the paramaters from the url            
+* In the browser the the feedback form wil be load like: ../index.html?Token="put token here"&QuestionId="put question id here"
+* This function wil match the name parameter with href parameters ans wil return the input value.
+*
+* Example: browser url is "index.html?Token=3" $.urlParam('Token') wil return 3.            
 */
 $.urlParam = function(name)
 {
+	
 	var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
 	return results[1] || 0;
 }
 
 /*
-* This function loads data from the backend and fils the answerfield & questionfield 
+* This function loads data from the backend and fills the answerfield & questionfield 
 * The accept & decline methods are bound to the buttons               
 */
-function loadQuestionWithId(questionid, token)
+function loadQuestionWithId(questionId, token)
 {
-	var request = $.get(url + "GetQuestionById/" + questionid, null, null, "json");
+	var request = $.get(url + "GetQuestionById/" + questionId, null, null, "json");
 	
 	request.done(function (response)
 	{
@@ -34,12 +38,12 @@ function loadQuestionWithId(questionid, token)
 		
 		$("#btnAccept").click(function()
 		{
-			accept(response.Answer.Id, questionid, token);	
+			accept(response.Answer.Id, questionId, token);	
 		});
 		
 		$("#btnDecline").click(function()
 		{
-			decline(response.Answer.Id, questionid, token);	
+			decline(response.Answer.Id, questionId, token);	
 		});
 	});
 	request.fail(function (response)
