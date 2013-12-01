@@ -27,7 +27,7 @@ $(function(){
         if(allChecksPassed){
             $("#email").val("info@example.com");
             $("#question").val("Type hier uw vraag...");
-            $.post( "test.php", { email: sMail, vraag: sQuestion })
+            $.post( "http://81.204.121.229/IntelliCloudService/QuestionService.svc/questions", { source: "Mail", reference: sMail, question: sQuestion })
                 .done(function( data ) {
                     $("#warningBox").html("<div style='color: #42e81c;'>"+ data +"</div> ");
                 });
