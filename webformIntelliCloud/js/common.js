@@ -5,11 +5,11 @@ $(function(){
 
         //Create variables and set value
         var allChecksPassed = true;
-        var sMail = $("#email").val();
+        //mail is not required anymore on this page
+		var sMail = "aaa@aaaa.aa";
         var sQuestion = $("#question").val();
 
-        //ToDo: Change variable to Title input field when integrated
-        var sTitle = "This is a hardcoded Test title!"
+        var sTitle = $("#title").val();
 
 
         //Check if valid email has been inputted
