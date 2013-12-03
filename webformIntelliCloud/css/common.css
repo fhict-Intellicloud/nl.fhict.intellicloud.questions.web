@@ -1,6 +1,7 @@
 *
 {
-    margin: 10px;
+    margin-top: 10px;
+	margin-bottom: 10px;
     padding: 0px;
     font-family: Arial, sans-serif;
 }
@@ -24,18 +25,17 @@ section
 
 .form
 {
-
- text-align: center;
-
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
 }
 
-#email, #question
-{
+#email, #question, #titel, #answer, #feedback{
     border:0;
     padding:10px;
     font-size:1.3em;
     font-family:Arial, sans-serif;
-    color:#aaa;
+    color:#000;
     border:solid 1px #ccc;
     margin:0 0 20px;
     width:300px;
@@ -49,11 +49,10 @@ section
     color: #009ea2;
 }
 
-#submitQuestion
-{
+#submitQuestion, #submitEmail, #usefullBtn, #unUsefullBtn, #resendQuestion{
     border:solid 2px;
     padding:15px 30px;
-    margin:0 0 20px;
+    margin-left:45px;
     font-family:Arial, sans-serif;
     font-size:1.2em;
     text-transform:uppercase;
@@ -62,15 +61,26 @@ section
     color: #ffffff;
     width: 230px;
 }
-
-#submitQuestion:hover
-{
+#disusefullBtn, #disunUsefullBtn{
+	border:solid 2px;
+    padding:15px 30px;
+    margin-left:45px;
+    font-family:Arial, sans-serif;
+    font-size:1.2em;
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color:#d4d4d4;
+    color: #ffffff;
+    width: 230px;
+}
+#submitQuestion:hover, #submitEmail:hover, #usefullBtn:hover, #unUsefullBtn:hover, #resendQuestion:hover{
     background-color: #5cb888;
-
 }
 
-.label
-{
-    text-transform: uppercase;
-    text-align: left;
+label{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#009ea2;
+	font-size:1.3em;
+	font-weight:bold;
+	text-transform:uppercase;
 }

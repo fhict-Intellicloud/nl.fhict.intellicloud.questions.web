@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="js/functions.js"></script>
+<html>
+
+<head>
+    <title>Stel een vraag - IntelliCloud</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header></header>
+<section>
+    <article class="form">
+        
+            <p>
+                <label for="answer" name="answer">antwoord</label><br/>
+                <textarea name="answer" id="answer" rows="7" >Je kunt gebruik maken van:&#10;var array = new Array();&#10;array[0] = "foo";&#10;array[1] = "bar";</textarea>
+            </p>
+            <p>
+                <label for="usefullBtn" name="usefullBtn"></label>
+                <button name="usefullBtn" id="usefullBtn">Bruikbaar</button>
+                <label for="UsefullBtn" name="unUsefullBtn"></label>
+                <button name="unUsefullBtn" id="unUsefullBtn" onClick="showfeedbackbox()">Niet bruikbaar</button><br/>
+            </p>
+            <div id="feedbackBox">
+            	
+            </div>
+        
+    </article>
+</section>
+</body>
+</html>
