@@ -17,14 +17,14 @@ function validateQuestion(){
 	var checksPassed = true;
 	
 	if(question.length < minLengthQuestion){
-        $("#warningBox").html($("#warningBox").html() + "<div style='color: #ff0000;'>Uw vraag dient minimaal " + minLengthQuestion + " karakters te zijn!</div> ");
+        $("#warningBox").html($("#warningBox").html() + "<div style='color: #ff0000;'>Your question should be at least " + minLengthQuestion + " characters long!</div> ");
 		$("#question").css('border', 'solid 1px #f00');
         checksPassed = false;
     }
 
     //Check if title length is 15 characters minimum
     if(title.length < minLengthTitle){
-       $("#warningBox").html($("#warningBox").html() + "<div style='color: #ff0000;'>Uw titel dient minimaal " + minLengthTitle + " karakters te zijn!</div> ");
+       $("#warningBox").html($("#warningBox").html() + "<div style='color: #ff0000;'>Your title should be at least " + minLengthTitle + " characters long!</div> ");
 	   $("#title").css('border', 'solid 1px #f00');
        checksPassed = false;
     }
@@ -46,7 +46,7 @@ function validateEmail(){
 		clearWarningBox();
 		submitQuestion();
 	}else{
-		$("#warningBox").html("<div style='color: #ff0000;'>Email is incorrect ingevuld</div> ");
+		$("#warningBox").html("<div style='color: #ff0000;'>Not a valid email address!</div> ");
 		$("#email").css('border', 'solid 1px #f00');
 	checksPassed = false;
 	}
