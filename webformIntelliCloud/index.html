@@ -1,32 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>Stel een vraag - IntelliCloud</title>
-    <link href="css/common.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+
+<link rel="stylesheet" href="bootstrapfiles/css/bootstrap.css"/>
+<link rel="stylesheet" href="stylesheet/stylesheet.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intellicloud</title>
 </head>
 <body>
-<header></header>
 <section>
-    <article class="form">
-        <form action="" method="post">
-            <p id="warningBox">
+	<article id="askQuestion" class="show">
+    	<header></header>
+        <center>
+        	<p id="warningBox"></p>
+            
+                <label for="title">title</label>
+                <input class="form-control" type="text" name="title" id="title" placeholder="Title for your question" />
+                <label for="question">Question</label>
+                <textarea class="form-control" placeholder="Ask a question..." name="question" id="question" rows="7" ></textarea>
+                <label for="submitQuestion"></label>
+                <button name="submitQuestion" id="submitQuestion">Get answer</button>
+        </center>
+        <footer>
+        	<!--still empty-->
+        </footer>
+    </article>
+    <article id="noAnswer" class="hide">
+    	<header></header>
+        <center>
+        	<p class="paragraph">
+           		Unfortunately, we could not aswer your question right now.
+    			<br/><br/>
+    		</p>
+    		<p class="paragraph">
+            	By filling out this form, we will be able to contact you as soon as possible when we have an answer for your question.
+    		</p>
+    		<label for="email" name="email">your emailaddress</label>
+    		<input class="form-control" type="email" name="email" id="email" placeholder="info@example.com" />
+    		<label for="submitEmail" name="submitEmail"></label>
+    		<button name="submitEmail" id="submitEmail">Submit</button>
+           
+        </center>
+        <footer>
+        	<!--still empty-->
+        </footer>
+    </article>
+    <article id="showAnswer" class="hide">
+    	<header></header>
+        <center>
+        	 <p>
+                <label for="answer" name="answer">Answer</label>
+                <textarea class="form-control" name="answer" id="answer" rows="7" >you could use:&#10;var array = new Array();&#10;array[0] = "foo";&#10;array[1] = "bar";</textarea>
             </p>
             <p>
-                <label for="titel" name="titel">titel</label><br/>
-                <input type="text" name="titel" id="titel" placeholder="Titel van uw vraag" />
+            	
+                <label for="usefullBtn" name="usefullBtn">Was this answer helpfull for you?</label>
+                <button name="usefullBtn" id="usefullBtn">Yes</button>
+                <label for="unUsefullBtn" name="unUsefullBtn"></label>
+                <button name="unUsefullBtn" id="unUsefullBtn" onClick="showfeedbackbox()">No</button><br/>
             </p>
-            <p>
-                <label for="question" name="question">vraag</label><br/>
-                <textarea placeholder="Type hier uw vraag..." name="question" id="question" rows="7" ></textarea>
-            </p>
-            <p>
-                <label for="submitQuestion" name="submitQuestion"></label>
-                <button name="submitQuestion" id="submitQuestion">Stel je vraag</button>
-            </p>
-        </form>
+            <div id="feedbackBox">
+            	
+            </div>
+           
+        </center>
+        <footer>
+        	<!--still empty-->
+        </footer>
     </article>
 </section>
 </body>
+<!--<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+<!--<script type="text/javascript" src="js/common.js"></script>-->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/globals.js"></script>
+<script type="text/javascript" src="js/validationforms.js"></script>
+<script type="text/javascript" src="js/submitforms.js"></script>
+<script type="text/javascript" src="js/showhide.js"></script>
+<script type="text/javascript" src="js/feedbackanswer.js"></script>
+<script src="bootstrapfiles/js/bootstrap.js"></script>
 </html>
