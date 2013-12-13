@@ -1,0 +1,17 @@
+{
+	"name": "IntelliCloud",
+	"version": "0.4.0",
+	"description": "The web version of Intelliclouds Questions. The website allows people to ask questions regarding any issues. These questions can then be handled by experts using by Answers.",
+	"main": "Gruntfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "IntelliCloud",
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"grunt-contrib-qunit": "~0.4.0",
+		"grunt-contrib-jshint": "~0.4.0",
+		"grunt-contrib-watch": "~0.4.0",
+		"grunt-contrib-csslint": "~0.2.0"
+	}
+}
