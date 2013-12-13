@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+header
+{
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    background-image: url("../images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom:20px;
+	margin-top:20px;
+}
+@media (min-width: 600px) {
+	.show{
+		display:block;
+		width:600px;
+		margin:auto;	
+	}
+}
+.show{
+		display:block;	
+}
+.hidden{
+	display:none;
+}
+
+label{
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
+	width:100%;
+	color:#009ea2;
+	font-size:1.3em;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+#email, #question, #title, #answer, #feedback{
+    padding:10px;
+    font-size:1.3em;
+    font-family:Arial, sans-serif;
+    color:#000;
+    border:solid 1px #ccc;
+    margin:0 0 20px;
+    -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+#submitQuestion, #submitEmail, #usefullBtn, #unUsefullBtn, #resendQuestion{
+    border:solid 2px;
+    padding:15px 30px;
+    margin-left:0;
+    font-family:Arial, sans-serif;
+    font-size:1.2em;
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color:#009ea2;
+    color: #ffffff;
+    width: 230px;
+	margin-top:20px;
+}
+#disusefullBtn, #disunUsefullBtn{
+	border:solid 2px;
+    padding:15px 30px;
+    margin-left:45px;
+    font-family:Arial, sans-serif;
+    font-size:1.2em;
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color:#d4d4d4;
+    color: #ffffff;
+    width: 230px;
+	height: 57px;
+}
+#submitQuestion:hover, #submitEmail:hover, #usefullBtn:hover, #unUsefullBtn:hover, #resendQuestion:hover{
+    background-color: #5cb888;
+}
+
