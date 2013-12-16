@@ -1,8 +1,5 @@
 // JavaScript Document
-$("#submitQuestion").click(function() {
-	clearWarningBox();
-	validateQuestion();
-});
+
 
 function clearWarningBox(){
 	$('#warningBox').html("");
@@ -34,9 +31,7 @@ function validateQuestion(){
 	}
 }
 
-$("#submitEmail").click(function(e) {
-	validateEmail();
-});
+
 
 function validateEmail(){
 	//validate the structure of the emailaddress

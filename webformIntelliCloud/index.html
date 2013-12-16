@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="css/bootstrap.css"/>
 <link rel="stylesheet" href="css/stylesheet.css"/>
+<link rel="stylesheet" href="css/jquery.fancybox.css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intellicloud</title>
@@ -10,25 +11,21 @@
 <body>
 <section>
 	<article id="askQuestion" class="show">
-    	<header>
-			<div class="img"></div>
+    	<header class="headerbackground">
 		</header>
         <section>
         	<p id="warningBox"></p>
-                <label for="title">title</label>
-                <input class="form-control" type="text" name="title" id="title" placeholder="Title for your question" />
-                <label for="question">Question</label>
-                <textarea class="form-control" placeholder="Ask a question..." name="question" id="question" rows="7" ></textarea>
-                <label for="submitQuestion"></label>
-                <button name="submitQuestion" id="submitQuestion">Get answer</button>
+            <label for="title">title</label>
+            <input class="form-control" type="text" name="title" id="title" placeholder="Title for your question" />
+            <label for="question">Question</label>
+            <textarea class="form-control" placeholder="Ask a question..." name="question" id="question" rows="7" ></textarea>
+            <button name="submitQuestion" id="submitQuestion">Get answer</button>
         </section>
         <footer>
         </footer>
     </article>
-	
     <article id="noAnswer" class="hide">
-    	<header>
-			<div class="img"></div>
+    	<header class="headerbackground">
 		</header>
         <section>
         	<p class="paragraph">
@@ -38,11 +35,9 @@
     		<p class="paragraph">
             	By filling out this form, we will be able to contact you as soon as possible when we have an answer for your question.
     		</p>
-    		<!-- attribute name not allowed on element label at this point. -->
-            <label for="email" name="email">your emailaddress</label>
+            <label for="email">your emailaddress</label>
     		<input class="form-control" type="email" name="email" id="email" placeholder="info@example.com" />
-    		<!-- attribute name not allowed on element label at this point. -->
-            <label for="submitEmail" name="submitEmail"></label>
+            
     		<button name="submitEmail" id="submitEmail">Submit</button>
         </section>
         <footer>
@@ -50,22 +45,18 @@
     </article>
 	
     <article id="showAnswer" class="hide">
-    	<header>
-			<div class="img"></div>
+    	<header class="headerbackground">
 		</header>
         <section>
         	 <p>
-             	<!-- attribute name not allowed on element label at this point. -->
-                <label for="answer" name="answer">Answer</label>
+                <label for="answer" >Answer</label>
                 <textarea class="form-control" name="answer" id="answer" rows="7" >you could use:&#10;var array = new Array();&#10;array[0] = "foo";&#10;array[1] = "bar";</textarea>
             </p>
             <p>
-            	<!-- attribute name not allowed on element label at this point. -->
-                <label for="usefullBtn" name="usefullBtn">Was this answer helpfull for you?</label>
-                <button name="usefullBtn" id="usefullBtn">Yes</button>
-                <!-- attribute name not allowed on element label at this point. -->
-                <label for="unUsefullBtn" name="unUsefullBtn"></label>
-                <button name="unUsefullBtn" id="unUsefullBtn" onClick='showScreen("feedbackAnswer")'>No</button><br/>
+                <label for="usefullBtn">Was this answer helpfull for you?</label>
+                <button name="usefullBtn" id="usefullBtn" class="useButton">Yes</button>
+                
+                <button name="unUsefullBtn" id="unUsefullBtn" class="useButton" >No</button><br/>
             </p>
         </section>
         <footer>
@@ -76,20 +67,15 @@
     	<header></header>
         <section>
 			<p>
-				<!-- attribute name not allowed on element label at this point. -->
-				<label for="feedback" name="feedback">Please provide us with additional information</label><br/>
+				<label for="feedback">Please provide us with additional information</label><br/>
 				<textarea class="form-control" placeholder="Put your feedback here..." name="feedback" id="feedback" rows="7" ></textarea>
 			</p>
 			
 			<p>
-            	<!-- attribute name not allowed on element label at this point. -->
-				<label for="email" name="email">Your emailaddress</label><br/>
-                <!-- Duplicate ID email. -->
-				<input class="form-control" type="email" name="email" id="email" placeholder="info@example.com" />
+				<label for="email">Your emailaddress</label><br/>
+				<input class="form-control" type="email" name="email" id="emailFeedback" placeholder="info@example.com" />
 			</p>
 			<p>
-            	<!-- attribute name not allowed on element label at this point. -->
-				<label for="resendQuestion" name="resendQuestion"></label>
 				<button name="resendQuestion" id="resendQuestion">Submit</button>
 			</p>
         </section>
@@ -97,13 +83,19 @@
         </footer>
     </article>
 </section>
+<div class="fancyboxCustom" id="data" style="display: none;">
+    <h3>One moment please</h3>
+    <p>Your question will be answered as soon as possible</p>
+    <img class="image" src="images/loader.gif" width="100" height="100" alt="loader">
+</div>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/globals.js"></script>
 <script type="text/javascript" src="js/validationforms.js"></script>
+<script type="text/javascript" src="js/onclick.js"></script>
 <script type="text/javascript" src="js/submitforms.js"></script>
 <script type="text/javascript" src="js/showhide.js"></script>
-<script type="text/javascript" src="js/feedbackanswer.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/fancyshowhide.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>
