@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-header
+.headerbackground
 {
     height: 100px;
     width: 100%;
@@ -13,18 +13,13 @@ header
     margin-bottom:20px;
 	margin-top:20px;
 }
+
 @media (min-width: 600px) {
 	.show{
 		display:block;
 		width:600px;
 		margin:auto;	
 	}
-}
-.show{
-		display:block;	
-}
-.hidden{
-	display:none;
 }
 
 label{
@@ -36,8 +31,10 @@ label{
 	font-weight:bold;
 	text-transform:uppercase;
 }
-#email, #question, #title, #answer, #feedback{
-    padding:10px;
+
+input[type=text]{
+    padding-left:10px;
+	height:40px;
     font-size:1.3em;
     font-family:Arial, sans-serif;
     color:#000;
@@ -48,7 +45,15 @@ label{
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-#submitQuestion, #submitEmail, #usefullBtn, #unUsefullBtn, #resendQuestion{
+textarea{
+	padding-left:10px !important;
+    font-size:1.3em !important;
+    font-family:Arial, sans-serif !important;
+    color:#000 !important;
+}
+
+
+button{
     border:solid 2px;
     padding:15px 30px;
     margin-left:0;
@@ -61,20 +66,15 @@ label{
     width: 230px;
 	margin-top:20px;
 }
-#disusefullBtn, #disunUsefullBtn{
-	border:solid 2px;
-    padding:15px 30px;
+
+.useButton{
     margin-left:45px;
-    font-family:Arial, sans-serif;
-    font-size:1.2em;
-    text-transform:uppercase;
-    font-weight:bold;
     background-color:#d4d4d4;
-    color: #ffffff;
     width: 230px;
 	height: 57px;
 }
-#submitQuestion:hover, #submitEmail:hover, #usefullBtn:hover, #unUsefullBtn:hover, #resendQuestion:hover{
+
+button:hover{
     background-color: #5cb888;
 }
 

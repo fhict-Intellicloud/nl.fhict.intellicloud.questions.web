@@ -2,7 +2,7 @@
 function checkForAnswer(){
 //Check if there is a correct answer available
 //else navigate to noAnswer.html to submit an email address
-	
+	fancyshowhide();
 	//temp -> not yet implemented on server
 	var data = false
 	
@@ -14,6 +14,7 @@ function checkForAnswer(){
 			if(data) {
 				$("#warningBox").html("<div style='color: #42e81c;'>"+ data +"</div> ");
 				//$page = ;
+				
 				showScreen("showAnswer");
 				//Answer found -> GOTO answer.html
 			}
