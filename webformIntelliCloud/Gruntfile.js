@@ -19,9 +19,14 @@ module.exports = function(grunt) {
 		csslint: {
 			src: ['css/stylesheet.css']
 		},
+		validation: {
+			files: {
+				src: ['index.html', 'test/index.html']
+			}
+		},
 		watch: {
 			files: [],
-			tasks: ['csslint', 'jshint', 'qunit']
+			tasks: ['validation','csslint', 'jshint', 'qunit']
 		}
 	});
 	
@@ -29,6 +34,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-html-validation');
 	
-	grunt.registerTask('default', ['csslint', 'jshint', 'qunit']);
+	grunt.registerTask('default', ['validation','csslint', 'jshint', 'qunit']);
 };

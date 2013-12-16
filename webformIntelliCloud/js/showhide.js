@@ -18,32 +18,29 @@ function getUrlVars()
 }*/
 
 function showScreen(page){
+	//hide all pages
+	$("#askQuestion").removeClass("show").addClass("hide");
+	$("#noAnswer").removeClass("show").addClass("hide");
+	$("#showAnswer").removeClass("show").addClass("hide");
+	$("#feedbackAnswer").removeClass("show").addClass("hide");
+	
+	//show specific page
 	switch (page){
 		case "askQuestion":	
-			$("#askQuestion").removeClass("hide");
-			$("#askQuestion").addClass("show");
-			$("#noAnswer").removeClass("show");
-			$("#noAnswer").addClass("hide");
-			$("#showAnswer").removeClass("show");
-			$("#showAnswer").addClass("hide");
+			$("#askQuestion").removeClass("hide").addClass("show");
 		break;
 	
 		case "noAnswer":
-			$("#askQuestion").removeClass("show");
-			$("#askQuestion").addClass("hide");
-			$("#noAnswer").removeClass("hide");
-			$("#noAnswer").addClass("show");
-			$("#showAnswer").removeClass("show");
-			$("#showAnswer").addClass("hide");
+			$("#noAnswer").removeClass("hide").addClass("show");
 		break;
 		
 		case "showAnswer":
-			$("#askQuestion").removeClass("show");
-			$("#askQuestion").addClass("hide");
-			$("#noAnswer").removeClass("show");
-			$("#noAnswer").addClass("hide");
-			$("#showAnswer").removeClass("hide");
-			$("#showAnswer").addClass("show");
+			$("#showAnswer").removeClass("hide").addClass("show");
+		break;
+		
+		case "feedbackAnswer":
+			$("#showAnswer").removeClass("hide").addClass("show");
+			$("#feedbackAnswer").removeClass("hide").addClass("show");
 		break;
 		
 		default:
