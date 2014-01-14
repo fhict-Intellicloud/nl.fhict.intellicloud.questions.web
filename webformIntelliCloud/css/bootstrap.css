@@ -521,6 +521,7 @@ h2,
 h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  
 }
 
 h1 small,
@@ -551,6 +552,7 @@ h6 .small {
 h1,
 .h1 {
   font-size: 36px;
+  color:#009ea2;
 }
 
 h2,

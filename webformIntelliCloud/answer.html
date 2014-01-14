@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<link rel="stylesheet" href="css/stylesheet.css"/>
+<link rel="stylesheet" href="css/jquery.fancybox.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intellicloud</title>
+</head>
+<body>
+<section>
+	<article id="showAnswer" class="show">
+    	<header class="headerbackground">
+		</header>
+        <section>
+        	 <p>
+                <label for="question" id="questionTitle">Question</label>
+                <textarea class="form-control" name="question" id="question" rows="7" ></textarea>
+            </p>
+			 <p>
+                <label for="answer" id="answerTitle" >Answer</label>
+                <textarea class="form-control" name="answer" id="answer" rows="7" ></textarea>
+            </p>
+            <p>
+                <label for="helpfulAnswer" id="helpfulQuestion">Was this answer helpfull for you?</label>
+                <button name="usefullBtn" id="helpfulAnswer" class="useButton">Yes</button>
+                
+                <button name="unUsefullBtn" id="unhelpfulAnswer" class="useButton" >No</button><br/>
+            </p>
+        </section>
+        <footer>
+        </footer>
+    </article>
+	
+	<article id="feedbackAnswer" class="hide">
+    	<header></header>
+        <section>
+			<p>
+				<label for="feedback" id="informationQuestion">Please provide us with additional information</label><br/>
+				<span id="placeholderInformation"><textarea class="form-control" placeholder="Put your feedback here..." name="feedback" id="feedback" rows="7" ></textarea></span>				
+			</p>
+			
+			<p>
+				<label for="emailFeedback" id="emailAdress">Your emailaddress</label><br/>
+				<span id="placeholderEmail"><input class="form-control" type="email" name="email" id="emailFeedback" placeholder="info@example.com" /></span>
+			</p>
+			<p>
+				<button name="sendFeedback" id="Submit">Submit</button>
+			</p>
+        </section>
+        <footer>
+        </footer>
+    </article>
+</section>
+<div class="fancyboxCustom" id="data" style="display: none;">
+    <h3 id="moment">One moment please</h3>
+    <p id="fancyText">Retrieving your answer.</p>
+    <img class="image" src="images/loader.gif" width="100" height="100" alt="loader">
+</div>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/globals.js"></script>
+<script type="text/javascript" src="js/feedbackanswer.js"></script>
+<script type="text/javascript" src="js/onclick.js"></script>
+<script type="text/javascript" src="js/showhide.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="js/fancyshowhide.js"></script>
+<script type="text/javascript" src="js/retrieveGetValues.js"></script>
+<script type="text/javascript" src="js/getAnswer.js"></script>
+<script type="text/javascript" src="js/answerOnLoad.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/translate_answers.js"></script>
+</body>
+</html>

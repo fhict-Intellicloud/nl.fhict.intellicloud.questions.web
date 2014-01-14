@@ -1,22 +1,3 @@
-//new
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-/*if(getUrlVars()["feedbacktoken"] != "" ||getUrlVars()["feedbacktoken"] != NULL || !getUrlVars()["feedbacktoken"]){
-	showScreen("showAnswer");
-}else{
-	showScreen("askQuestion");	
-}*/
-
 function showScreen(page){
 	//hide all pages
 	$("#askQuestion").removeClass("show").addClass("hide");
@@ -47,4 +28,7 @@ function showScreen(page){
 			alert("Page not found");
 		break;
     }
+}
+function showButton(){
+	$("#noValidAnswerFoundButton").removeClass("hide");	
 }
