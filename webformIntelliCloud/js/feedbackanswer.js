@@ -1,5 +1,18 @@
-// JavaScript Document
-function showfeedbackbox() { 
-	/*document.getElementById('feedbackBox').innerHTML='<label for="feedback" name="feedback">Please provide us with additional information</label><br/><textarea class="form-control" placeholder="Put your feedback here..." name="feedback" id="feedback" rows="7" ></textarea></p><p><label for="email" name="email">Your emailaddress</label><br/><input class="form-control" type="email" name="email" id="email" placeholder="info@example.com" /></p><p><label for="resendQuestion" name="resendQuestion"></label><button name="resendQuestion" id="resendQuestion">Submit</button>';
-	*/
+function sendFeedback(feedbackType) {
+		if(feedbackType === 1){
+			feedback = $("sendFeedback").val();
+		}
+		console.log(feedback);
+		$.ajax({
+			//crossDomain: true,
+			type: "POST",
+			url: 'http://81.204.121.229/intellicloudservicenew/FeedbackService.svc/feedbacks',
+			contentType: "application/json",
+			async: false,
+			data: '{"feedback":"' + feedback + '", "answerId":"' + answerId +'", "questionId":"' + questionId + '", "feedbackType":"' + feedbackType + '", "feedbackToken":"' + feedbackToken+ '"}', 
+			success: function(data) {
+				//TODO show thank you message
+				alert(data);
+		},
+	});
 }

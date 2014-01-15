@@ -1,0 +1,13 @@
+Naam,nl,en
+answerTitle,Antwoord,Answer
+placeholderWrong,"Er ging iets verkeerd, probeer het later nog een keer!","Something went wrong, please try again later!"
+helpfulQuestion,Was dit antwoord bruikbaar voor u?,WAS THIS ANSWER HELPFULL FOR YOU?
+helpfulAnswer,Ja,Yes
+unhelpfulAnswer,Nee,No
+informationQuestion,Geef ons alstublieft meer informatie over uw vraag?,PLEASE PROVIDE US WITH ADDITIONAL INFORMATION
+placeholderInformation,<textarea class='form-control' placeholder='Schrijf hier uw feedback......' name='feedback' id='feedback' rows='7' ></textarea>,<textarea class='form-control' placeholder='Put your feedback here...' name='feedback' id='feedback' rows='7' ></textarea>
+emailAdress,Uw email adres,YOUR EMAILADDRESS
+placeholderEmail,<input class='form-control' type='email' name='email' id='emailFeedback' placeholder='info@example.com' />,<input class='form-control' type='email' name='email' id='emailFeedback' placeholder='info@example.com' />
+Submit,Verzenden,Submit
+moment,Een moment geduld alstublieft,One moment please
+fancyText,Uw feedback wordt naar de server verzonden,Your feedback will be sent to our server

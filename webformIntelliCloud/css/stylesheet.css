@@ -78,3 +78,48 @@ button:hover{
     background-color: #5cb888;
 }
 
+.space{
+	height:20px;
+	width:100%;
+}
+
+/*accordion*/
+.ui-accordion{
+	border-radius:0;
+}
+.ui-accordion .ui-corner-bottom{
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}
+
+.ui-accordion .ui-accordion-header{
+	color:#999;
+	font-size:1.1em;
+	font-weight:bold;
+	border: 1px solid #cccccc;
+	background:#d4d4d4;
+	border-radius:0;
+}
+
+.ui-accordion .ui-state-active{
+	color:#009ea2;
+	background:#FFF;
+}
+
+.ui-accordion ui-accordion-content{
+	border: 1px solid #cccccc;
+}
+
+.ui-accordion .ui-accordion-header:focus{
+	border-color: #66afe9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.ui-accordion .ui-accordion-content:focus{
+	border-color: #66afe9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}

@@ -1,0 +1,12 @@
+Naam,nl,en
+titleLable,Titel,Title
+spanTitle,<input class='form-control' type='text' name='title' id='title' placeholder='Titel voor uw vraag' />,<input class='form-control' type='text' name='title' id='title' placeholder='Title for your question' />
+questionLable,Vraag,Question
+questionInput,<textarea class='form-control' onKeyUp='getSimilarQuestion()' placeholder='Stel uw vraag...' name='question' id='question' rows='7' />,<textarea class='form-control' onKeyUp='getSimilarQuestion()' placeholder='Ask a question...' name='question' id='question' rows='7' />
+noValidAnswerFoundButton,Geen antwoord,Problem still unsolved?
+questionLable2,Vraag,Question
+fancyText,Uw vraag wordt naar de server verzonden,Your question will be sent to our server
+emailLable,Uw email adres,Your email address
+email,<input class='form-control' type='email' name='email' id='email' placeholder='info@example.com' />,<input class='form-control' type='email' name='email' id='email' placeholder='info@example.com' />
+submitEmail,Verzenden,Submit
+moment,een moment geduld alstublieft,One moment please

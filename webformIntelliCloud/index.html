@@ -1,9 +1,11 @@
 <!doctype html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.css"/>
 <link rel="stylesheet" href="css/stylesheet.css"/>
 <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intellicloud</title>
@@ -14,12 +16,12 @@
     	<header class="headerbackground">
 		</header>
         <section>
-        	<p id="warningBox"></p>
-            <label for="title">title</label>
-            <input class="form-control" type="text" name="title" id="title" placeholder="Title for your question" />
-            <label for="question">Question</label>
-            <textarea class="form-control" placeholder="Ask a question..." name="question" id="question" rows="7" ></textarea>
-            <button name="submitQuestion" id="submitQuestion">Get answer</button>
+            <label for="question" id="questionLable">Question</label>
+            <span id="questionInput"><textarea onKeyUp="getSimilarQuestion()" class="form-control" placeholder="Ask a question..." name="question" id="question" rows="7" ></textarea></span>
+			<div class="space"></div>
+            <div id="accordion">            
+            </div>
+			<button name="noValidAnswerFoundButton" class="hide" id="noValidAnswerFoundButton">Problem still unsolved</button>
         </section>
         <footer>
         </footer>
@@ -28,14 +30,14 @@
     	<header class="headerbackground">
 		</header>
         <section>
-        	<p class="paragraph">
-           		Unfortunately, we could not aswer your question right now.
-    			<br/><br/>
-    		</p>
-    		<p class="paragraph">
-            	By filling out this form, we will be able to contact you as soon as possible when we have an answer for your question.
-    		</p>
-            <label for="email">your emailaddress</label>
+        	<p id="warningBox"></p>
+            <label for="title" id="titleLable">title</label>
+            <span id="spanTitle"><input class="form-control" type="text" name="title" id="title" placeholder="Title for your question" /> </span>
+            
+            <label id="questionLable2" for="questionsubmit">Question</label>
+            <textarea class="form-control" name="questionsubmit" id="questionsubmit" rows="7" ></textarea>
+			
+            <label id="emailLable" for="email">your emailaddress</label>
     		<input class="form-control" type="email" name="email" id="email" placeholder="info@example.com" />
             
     		<button name="submitEmail" id="submitEmail">Submit</button>
@@ -43,53 +45,16 @@
         <footer>
         </footer>
     </article>
-	
-    <article id="showAnswer" class="hide">
-    	<header class="headerbackground">
-		</header>
-        <section>
-        	 <p>
-                <label for="answer" >Answer</label>
-                <textarea class="form-control" name="answer" id="answer" rows="7" >you could use:&#10;var array = new Array();&#10;array[0] = "foo";&#10;array[1] = "bar";</textarea>
-            </p>
-            <p>
-                <label for="usefullBtn">Was this answer helpfull for you?</label>
-                <button name="usefullBtn" id="usefullBtn" class="useButton">Yes</button>
-                
-                <button name="unUsefullBtn" id="unUsefullBtn" class="useButton" >No</button><br/>
-            </p>
-        </section>
-        <footer>
-        </footer>
-    </article>
-	
-	<article id="feedbackAnswer" class="hide">
-    	<header></header>
-        <section>
-			<p>
-				<label for="feedback">Please provide us with additional information</label><br/>
-				<textarea class="form-control" placeholder="Put your feedback here..." name="feedback" id="feedback" rows="7" ></textarea>
-			</p>
-			
-			<p>
-				<label for="email">Your emailaddress</label><br/>
-				<input class="form-control" type="email" name="email" id="emailFeedback" placeholder="info@example.com" />
-			</p>
-			<p>
-				<button name="resendQuestion" id="resendQuestion">Submit</button>
-			</p>
-        </section>
-        <footer>
-        </footer>
-    </article>
 </section>
 <div class="fancyboxCustom" id="data" style="display: none;">
-    <h3>One moment please</h3>
-    <p>Your question will be answered as soon as possible</p>
+    <h3 id="moment">One moment please</h3>
+    <p id="fancyText">Your question is sending to our service.</p>
     <img class="image" src="images/loader.gif" width="100" height="100" alt="loader">
 </div>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" src="js/globals.js"></script>
+<script type="text/javascript" src="js/getSimilarQuestion.js"></script>
 <script type="text/javascript" src="js/validationforms.js"></script>
 <script type="text/javascript" src="js/onclick.js"></script>
 <script type="text/javascript" src="js/submitforms.js"></script>
@@ -97,5 +62,6 @@
 <script type="text/javascript" src="js/jquery.fancybox.js"></script>
 <script type="text/javascript" src="js/fancyshowhide.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/translate_index.js"></script>
 </body>
 </html>

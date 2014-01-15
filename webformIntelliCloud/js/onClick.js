@@ -1,20 +1,27 @@
-// JavaScript Document
-	$(function (){
-		$("#submitQuestion").click(function() {
+$(function (){
+		/*$("#submitQuestion").click(function() {
 		clearWarningBox();
 		validateQuestion();
-	});
+	});*/
 	$("#submitEmail").click(function(e) {
-		validateEmail();
+		clearWarningBox();
+		validateQuestion();
 	});	
-	$("#unUsefullBtn").click(function(e) {
+	$("#unhelpfulBtn").click(function(e) {
 		showScreen("feedbackAnswer");
 	});
-	$("#usefullBtn").click(function(e) {
-		//function to send answer approval to db
+	$("#helpfulAnswer").click(function(e) {
+		sendFeedback(0);
 	});
 	$("#resendQuestion").click(function(e) {
 		//function to send the feedback to the server with email
 	});
-	
+	$("#noValidAnswerFoundButton").click(function(e) {
+		var questionsubmit = document.getElementById("questionsubmit");
+		questionsubmit.value = question;
+		showScreen("noAnswer");
+	});	
+	$("sendFeedback").click(function(e) {
+		sendFeedback(1);
+	});
 })

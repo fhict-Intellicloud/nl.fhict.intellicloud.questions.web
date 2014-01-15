@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			files: ['test/**/*.html']
 		},
 		jshint: {
-			files: ['js/feedbackanswer.js', 'js/globals.js', 'js/showhide.js', 'submitforms.js', 'validationforms.js'],
+			files: ['js/feedbackanswer.js', 'js/globals.js', 'js/showhide.js', 'submitforms.js', 'validationforms.js', 'getAnswers.js'],
 			options: {
 				globals: {
 					jQuery: true,
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		},
 		validation: {
 			files: {
-				src: ['index.html', 'test/index.html']
+				src: ['index.html', 'test/index.html', 'answer.html']
 			}
 		},
 		watch: {
@@ -36,5 +36,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
 	
-	grunt.registerTask('default', ['validation','csslint', 'jshint', 'qunit']);
+	grunt.registerTask('default', ['csslint', 'jshint', 'qunit', 'validation']);
 };

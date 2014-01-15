@@ -1,5 +1,4 @@
-// JavaScript Document
-function fancyshowhide(){
+function fancyshow(){
 	$.fancybox({
 		maxWidth	: 500,
 		maxHeight	: 500,
@@ -21,12 +20,11 @@ function fancyshowhide(){
 					'text-align':	'center'
 				}
 			}
-		},
-		afterLoad: function(){
-			setTimeout( function() {
-				$.fancybox.close();
-			},3000);
 		}
 	});
 	return false;
+}
+
+function fancyhide(){
+	$.fancybox.close();
 }
