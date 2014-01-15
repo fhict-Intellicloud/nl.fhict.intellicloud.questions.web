@@ -7,7 +7,7 @@ window.onload=function(){
         type: "GET",
         url: "js/translations/index.csv",
         dataType: "text",
-        success: function(data) {alert('test'); processData(data);}
+        success: function(data) {processData(data);}
      });
 };
 
