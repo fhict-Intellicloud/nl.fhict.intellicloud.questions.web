@@ -10,8 +10,10 @@ function submitQuestion(){
 			alert("Connection error, Please try again");	
 		},
 		success: function(data) {
-			fancyhide();
 			window.location.replace('thanks.html');
+		},
+		complete: function(){
+			fancyhide();
 		},
 	});
 }
